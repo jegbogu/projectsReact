@@ -3,7 +3,7 @@ import { useState } from "react";
 
  
 const ProductCard = () => {
-    const[openModal,setOpenModal] = useState('open')
+    const[openModal,setOpenModal] = useState('false')
     const[products] = useState(
         [
             {
@@ -34,8 +34,9 @@ const ProductCard = () => {
     }
 ]
     )
-    const open =()=>{
-         setOpenModal('open')
+    const open =(index)=>{
+        setOpenModal(index)
+         
        
     
     }
@@ -48,7 +49,7 @@ const ProductCard = () => {
         // console.log(id)
     }
     return ( 
-        <div className="container-fluid">
+        <div className="container-fluid" style={{display:"flex"}}>
             {products.map((product,index)=>(
 
             <div className="container" style={{width:"30%",border:"solid 2px gray",padding:"20px"}} >
